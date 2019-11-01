@@ -1,0 +1,33 @@
+.navbar{
+    height: 100px;
+    color: white;
+    padding-left: 412px;
+    
+}
+.container{
+    width: 340px;
+    float: left;
+    background-color: rgb(238, 228, 228);
+    
+}
+.btn{
+    background-color: rgb(21, 153, 230);
+    height: 37px;
+}
+#city{
+    width: 340px;
+    float: left;
+}
+.weatherInfo{
+   border: 1px rgb(238, 228, 228) solid;
+   border-right: none;
+   margin-left: 370px;
+   margin-top: 20px;
+   height: 300px;
+}
+h1{
+    float: left;
+}
+h5{
+    padding-top: 15px;
+}

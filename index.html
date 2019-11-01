@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href=".\style\style.css">
+ 
+    <title>Work Day Scheduler</title>
+    
+  
+  </head>
+
+  <body>
+    <header class="navbar navbar-dark bg-dark">
+     <h1 class="text-center">Weather Dashboard</h1>
+    </header>
+    <div class="container">
+      <h2>Search for a city:</h2>
+
+      <div class="input-group">
+        <input type="text" class="form-control" id="cityList" value="">
+        
+          <button class="btn btn-secondary" type="submit">
+            <i class="fa fa-search"></i>
+            </button>
+            <h1 class="text-center" id="city"></h1>
+    </div>
+    </div>
+
+    <div class = "weatherInfo"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./script/script.js"></script>
+</body>
+</html>
