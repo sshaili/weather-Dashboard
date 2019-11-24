@@ -7,8 +7,18 @@
 .container{
     width: 340px;
     float: left;
-    background-color: rgb(238, 228, 228);
-    
+    background-color: #f2f2f2;
+}
+#fiveDayForcast{
+    margin-top: 25px;
+}
+.col{
+    background-color: rgb(74, 74, 190);
+    margin-left: 10px;
+    padding-top: 20px;
+    border: burlywood 1px solid;
+    height: 200px;
+    color: cornsilk;
 }
 .btn{
     background-color: rgb(21, 153, 230);
@@ -17,17 +27,30 @@
 #city{
     width: 340px;
     float: left;
+    font-size: 23px;
+    
 }
 .weatherInfo{
-   border: 1px rgb(238, 228, 228) solid;
+   border: 1px #f2f2f2 solid;
    border-right: none;
    margin-left: 370px;
    margin-top: 20px;
-   height: 300px;
+   height: 245px;
+   padding-left: 25px;
+}
+#eachCity{
+    height: 65px;
+
 }
 h1{
     float: left;
 }
+h1:hover{
+    cursor: pointer;
+}
 h5{
     padding-top: 15px;
+}
+hr{
+    width: 274px;
 }
