@@ -1,14 +1,45 @@
+var data = [];
+var cityName;
 
       $(document).ready(function() {
         $(".btn").on("click",function(){
             var cityName = $('#cityList').val(); 
-         $("#city").prepend("<div id=eachCity>" + cityName);
+         $("#city").prepend('<div id="eachCity" data-city="'+cityName+'">' + cityName + '</div>');
          callApi();
+         $("input:text").val(" ");
          saveHistory();
+         getCity();
         });
+
+        $('#cityList').on('keypress',function(event){
+          if (event.keyCode == 13) {
+              event.preventDefault();
+              var cityName = $('#cityList').val(); 
+              $("#city").prepend('<div id="eachCity" data-city="'+cityName+'">' + cityName + '</div>');
+              callApi();
+              $("input:text").val(" ");
+              saveHistory();
+               getCity();
+          }
+        });
+      
     });
+
+      function saveHistory(){
+        var jsonObject = { "weather" : $('#cityList').val()} ;
+        data.push(jsonObject);
+        localStorage.setItem("weather",JSON.stringify(data));
+      }
+
+      function getCity(){
+        $("#eachCity").on("click",function(){
+          var searchedCity = $(this).data('city');
+          var cityName = $('#cityList').val(searchedCity);
+          callApi(cityName);
+        })
+      }
        
-    function callApi(){
+    function callApi(cityName){
            
           // This is our API key. Add your own API key between the ""
     var APIKey = "e97afa7b3ec61a7ad5f41620a5e245c4";
@@ -17,6 +48,7 @@
     // Here we are building the URL we need to query the database
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
     // We then created an AJAX call
+    if(cityName != " "){
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -50,10 +82,7 @@
               
             }
             
-          
-           
             var forcast="https://api.openweathermap.org/data/2.5/forecast?q=" +cityName+ "&appid=" +APIKey ;
-           
             $.ajax({
               url: forcast,
               method: "GET"
@@ -79,12 +108,11 @@
 
               j = j+8;  
               }
-                
               });
-        
-
     });
     });
+  }
+  else{
+    $("#error").html("<div class='alert alert-danger' id='errorCity'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>City field cannot be empty</div>");
+  }
    }
-
- 
